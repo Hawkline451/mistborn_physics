@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED = 300
+@export var knockback := 1000
 
 var dir: float
 var spawnPosition : Vector2
@@ -18,13 +19,15 @@ func _physics_process(delta: float):
 	move_and_slide()
 	
 func _on_area_2d_body_entered(body):
-	print(body, "bbb")
 	if body is TileMapLayer:
 		print("HIT")
 		queue_free()
-		allomancy.set_is_ready()
+		#allomancy.set_is_ready()
+		
+		var player = get_parent().get_node("Player")
+		player.knockback = position.direction_to(player.position) * knockback
 		
 		
 func _on_life_timeout():
 	queue_free()
-	allomancy.set_is_ready()
+	#allomancy.set_is_ready()

@@ -15,6 +15,7 @@ func _process(delta):
 		# This code will run as long as the "interact" key is held down.
 		print("Interact key is pressed!")
 		shoot()
+		$AllomancyCooldown.start()
 
 func shoot():
 	var instance = bullet.instantiate()
@@ -28,4 +29,6 @@ func shoot():
 	#bullet_life.start()
 	#print("yay", bullet_life)
 	
-	
+func _on_allomancy_cooldown_timeout() -> void:
+	print("riiiip allomancy")
+	set_is_ready() 
