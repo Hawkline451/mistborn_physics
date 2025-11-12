@@ -5,13 +5,13 @@ extends CharacterBody2D
 var dir: float
 var spawnPosition : Vector2
 var spawnRotation : float
-var player: CharacterBody2D
+var allomancy: CharacterBody2D
 
 func _ready():
 	global_position = spawnPosition
 	global_rotation = spawnRotation
-	player = get_parent().get_node("Player")
-	
+	# Bullets spawns in Game node
+	allomancy = get_parent().get_node("Player").get_node("Allomancy")
 	
 func _physics_process(delta: float):
 	velocity = Vector2(SPEED, 0).rotated(dir)
@@ -22,9 +22,9 @@ func _on_area_2d_body_entered(body):
 	if body is TileMapLayer:
 		print("HIT")
 		queue_free()
-		player.set_is_ready()
+		allomancy.set_is_ready()
 		
 		
 func _on_life_timeout():
 	queue_free()
-	player.set_is_ready()
+	allomancy.set_is_ready()

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyys8414klvfq"]
+
+[ext_resource type="Script" uid="uid://bkqqsiukdek4c" path="res://scripts/allomancy.gd" id="1_cwj0l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rk6os"]
+radius = 4.0
+
+[node name="Allomancy" type="CharacterBody2D"]
+script = ExtResource("1_cwj0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rk6os")
+disabled = true

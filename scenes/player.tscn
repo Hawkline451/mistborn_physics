@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctliadjyuvt1l"]
+[gd_scene load_steps=10 format=3 uid="uid://ctliadjyuvt1l"]
 
 [ext_resource type="Texture2D" uid="uid://bkcjpc2oxdy38" path="res://assets/lancelot_.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://0ou31v4amrgx" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://cyys8414klvfq" path="res://scenes/allomancy.tscn" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
 atlas = ExtResource("1_3vyb7")
@@ -55,3 +56,6 @@ frame_progress = 0.23993872
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_tuyoq")
+
+[node name="Allomancy" parent="." instance=ExtResource("3_qhqgy")]
+position = Vector2(4, 5)
