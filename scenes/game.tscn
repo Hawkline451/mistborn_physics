@@ -222,8 +222,9 @@ tile_map_data = PackedByteArray("AAAMABEAAAADAAAAAAANABEAAAADAAAAAAAOABEAAAADAAA
 tile_set = SubResource("TileSet_lnu2h")
 
 [node name="MetalTiles" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAOABAAAAADAAUAAAAOAA8AAAADAAUAAAAkAAsAAAADAAUAAAA=")
+tile_map_data = PackedByteArray("AAAkAAsAAAADAAUAAAARABAAAAADAAUAAAARAA8AAAADAAUAAAA=")
 tile_set = SubResource("TileSet_p57ef")
+physics_quadrant_size = 1
 script = ExtResource("4_p57ef")
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
