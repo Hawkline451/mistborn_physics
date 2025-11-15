@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqggmi3ul6p3i"]
+
+[ext_resource type="Script" uid="uid://r78le2f6jvvn" path="res://scripts/allomancy_interaction_area.gd" id="1_08763"]
+
+[node name="AllomancyInteractionArea" type="Area2D"]
+collision_layer = 128
+collision_mask = 4
+script = ExtResource("1_08763")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 0)
+rotation = -6.2831855
+polygon = PackedVector2Array(0, 3.8466023e-06, 35, -5, 37, -2.9999948, 38, 6.6441326e-06, 37, 3.0000052, 35, 5)
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

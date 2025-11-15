@@ -21,7 +21,6 @@ texture = ExtResource("2_l5glv")
 
 [node name="Life" type="Timer" parent="."]
 process_callback = 0
-wait_time = 2.0
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

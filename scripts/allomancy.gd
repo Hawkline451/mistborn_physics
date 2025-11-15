@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var game = get_tree().get_root().get_node("Game")
 @onready var bullet = load("res://scenes/bullet.tscn")
 
+var nearest_metal_node: TileMapLayer
+
 var is_ready: = true
 
 func set_is_ready():
@@ -10,6 +12,8 @@ func set_is_ready():
 
 func _process(delta):
 	look_at(get_global_mouse_position())
+	# Check nearest metal node
+	
 	if Input.is_action_pressed("shoot") and is_ready:
 		is_ready = false
 		# This code will run as long as the "interact" key is held down.
@@ -32,3 +36,8 @@ func shoot():
 func _on_allomancy_cooldown_timeout() -> void:
 	print("riiiip allomancy")
 	set_is_ready() 
+	
+	
+
+var desired_direction := Vector2.ZERO
+@export var field_of_view := 45.0

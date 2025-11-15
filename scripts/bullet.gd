@@ -20,7 +20,7 @@ func _physics_process(delta: float):
 	
 func _on_area_2d_body_entered(body):
 	if body is TileMapLayer:
-		print("HIT")
+		print("HIT", body)
 		queue_free()
 		#allomancy.set_is_ready()
 		
