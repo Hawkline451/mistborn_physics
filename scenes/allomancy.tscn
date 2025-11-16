@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyys8414klvfq"]
+[gd_scene load_steps=4 format=3 uid="uid://cyys8414klvfq"]
 
 [ext_resource type="Script" uid="uid://bkqqsiukdek4c" path="res://scripts/allomancy.gd" id="1_cwj0l"]
+[ext_resource type="PackedScene" uid="uid://dqggmi3ul6p3i" path="res://scenes/allomancy_interaction_area.tscn" id="2_vnvd8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rk6os"]
 radius = 4.0
@@ -14,5 +15,7 @@ disabled = true
 
 [node name="AllomancyCooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="AllomancyInteractionArea" parent="." instance=ExtResource("2_vnvd8")]
 
 [connection signal="timeout" from="AllomancyCooldown" to="." method="_on_allomancy_cooldown_timeout"]

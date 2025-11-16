@@ -12,6 +12,7 @@ func set_is_ready():
 
 func _process(delta):
 	look_at(get_global_mouse_position())
+	#print(rotation,"rrr")
 	# Check nearest metal node
 	
 	if Input.is_action_pressed("shoot") and is_ready:
@@ -22,10 +23,20 @@ func _process(delta):
 		$AllomancyCooldown.start()
 
 func shoot():
+	var target_pos = rotation
+	if $AllomancyInteractionArea.looking_at_metal:
+		var direction_vector = $AllomancyInteractionArea.metal_coords - global_position
+		var angle_radians = direction_vector.angle()
+		#var angle_degrees = rad_to_deg(angle_radians)
+		
+		target_pos = angle_radians
+
+
+		
 	var instance = bullet.instantiate()
-	instance.dir = rotation
+	instance.dir = target_pos
 	instance.spawnPosition = global_position + Vector2(5,0)
-	instance.spawnRotation = rotation
+	instance.spawnRotation = target_pos
 	
 	game.add_child.call_deferred(instance)
 	

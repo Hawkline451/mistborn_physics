@@ -8,8 +8,9 @@ collision_mask = 4
 script = ExtResource("1_08763")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(0, -4.7683716e-07)
 rotation = -6.2831855
+scale = Vector2(3.4337938, 4.1577454)
 polygon = PackedVector2Array(0, 3.8466023e-06, 35, -5, 37, -2.9999948, 38, 6.6441326e-06, 37, 3.0000052, 35, 5)
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
